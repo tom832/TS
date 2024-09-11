@@ -128,7 +128,7 @@ if __name__ == "__main__":
         # 保存当前代的最优解
         best_individuals.append(population[np.argmax(fitness)])
 
-        # 选择
+        # select according to fitness
         parents = population[np.random.choice(np.arange(POPULATION_SIZE), size=POPULATION_SIZE, p=fitness/fitness.sum())]
 
         # save average fitness of current generation
