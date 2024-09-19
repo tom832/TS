@@ -1,0 +1,7 @@
+2024-09-08:05:11:21,379 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.35e+10 possible products
+2024-09-08:13:55:07,126 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.35e+10 possible products
+2024-09-08:22:57:26,202 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.26e+10 possible products
+2024-09-08:23:01:18,259 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.25e+10 possible products
+2024-09-09:13:14:28,900 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.25e+10 possible products
+2024-09-09:21:38:16,81 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.25e+10 possible products
+2024-09-11:19:08:23,508 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.25e+10 possible products

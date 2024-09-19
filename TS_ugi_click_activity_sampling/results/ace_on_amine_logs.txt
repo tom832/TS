@@ -1,0 +1,44 @@
+
+2024-09-08:04:26:07,698 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:04:26:55,984 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:04:29:00,161 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:04:36:35,584 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:04:43:47,304 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:04:44:59,225 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:04:53:38,642 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:04:58:26,765 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:04:58:51,578 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:04:59:52,102 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:05:01:27,96 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:05:03:49,84 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:13:55:19,617 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.27e+10 possible products
+2024-09-08:22:57:35,894 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.18e+10 possible products
+2024-09-08:23:12:13,711 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.17e+10 possible products
+2024-09-08:23:57:31,503 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.17e+10 possible products
+2024-09-09:13:14:25,777 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.17e+10 possible products
+2024-09-10:12:41:37,40 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.17e+10 possible products
+2024-09-11:14:51:53,835 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 3.17e+10 possible products
+2024-09-19:05:58:15,329 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:178 warmup score stats: cnt=20700, mean=0.6860, std=0.1938, min=0.0000, max=1.0000
+2024-09-19:05:58:15,410 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:196 Top score found during warmup: 1.000
+2024-09-19:05:58:31,151 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 0 max score: 0.950870 smiles: COc1cc(C(=O)N(c2ccccc2-c2cn([C@@H]3COc4cc(Br)ccc43)nn2)C(C(=O)NCc2ccccc2)c2cnc(OC)c(Cl)c2)ccc1Br bide-uc-1564_bide-uc-4692_bide-uc-1858_bide-uc-1807_bide-click-am-2507
+2024-09-19:06:53:21,141 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 100 max score: 0.990544 smiles: COc1cc(C(C(=O)NCc2ccccc2)N(C(=O)c2c(Cl)cnc(Br)c2Cl)c2ccccc2-c2cn(Cc3nc(C)c(Br)s3)nn2)cc(Br)c1O bide-uc-2602_bide-uc-492_bide-uc-1858_bide-uc-1807_bide-click-am-1965
+2024-09-19:07:45:17,248 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 200 max score: 0.993762 smiles: COC(=O)C[C@@H](c1ccc(Cl)c(Cl)c1)n1cc(-c2ccccc2N(C(=O)c2c(Cl)cnc(Br)c2Cl)C(C(=O)NCc2ccccc2)c2cc(Cl)c(O)c(Br)c2)nn1 bide-uc-2602_bide-uc-2871_bide-uc-1858_bide-uc-1807_bide-click-am-2060
+2024-09-19:08:14:50,649 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 300 max score: 0.995348 smiles: O=C(NCc1ccccc1)C(c1cc(Cl)c(O)c(Br)c1)N(C(=O)c1c(Cl)cnc(Br)c1Cl)c1ccccc1-c1cn(Cc2ccc(Br)c3cccnc23)nn1 bide-uc-2602_bide-uc-2871_bide-uc-1858_bide-uc-1807_bide-click-am-1822
+2024-09-19:08:46:11,932 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 400 max score: 0.996975 smiles: CC(c1ccc(Br)cn1)n1cc(-c2ccc(N(C(=O)c3cccc4ccncc34)C(C(=O)NCc3ccccc3)c3cc(Cl)c(O)c(Br)c3)cc2)nn1 bide-uc-3368_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1328
+2024-09-19:09:14:39,117 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 500 max score: 0.996975 smiles: CC(c1ccc(Br)cn1)n1cc(-c2ccc(N(C(=O)c3cccc4ccncc34)C(C(=O)NCc3ccccc3)c3cc(Cl)c(O)c(Br)c3)cc2)nn1 bide-uc-3368_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1328
+2024-09-19:09:42:36,392 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 600 max score: 0.996975 smiles: CC(c1ccc(Br)cn1)n1cc(-c2ccc(N(C(=O)c3cccc4ccncc34)C(C(=O)NCc3ccccc3)c3cc(Cl)c(O)c(Br)c3)cc2)nn1 bide-uc-3368_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1328
+2024-09-19:10:11:19,548 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 700 max score: 0.996975 smiles: CC(c1ccc(Br)cn1)n1cc(-c2ccc(N(C(=O)c3cccc4ccncc34)C(C(=O)NCc3ccccc3)c3cc(Cl)c(O)c(Br)c3)cc2)nn1 bide-uc-3368_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1328
+2024-09-19:10:38:47,863 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 800 max score: 0.996975 smiles: CC(c1ccc(Br)cn1)n1cc(-c2ccc(N(C(=O)c3cccc4ccncc34)C(C(=O)NCc3ccccc3)c3cc(Cl)c(O)c(Br)c3)cc2)nn1 bide-uc-3368_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1328
+2024-09-19:11:08:01,99 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 900 max score: 0.998269 smiles: COC(=O)C[C@@H](c1ccc(Cl)c(Cl)c1)n1cc(-c2ccc(N(C(=O)c3c(Cl)cnc(Br)c3Cl)C(C(=O)NCc3ccccc3)c3cc(Cl)c(O)c(Br)c3)cc2)nn1 bide-uc-2602_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-2060
+2024-09-19:11:34:32,649 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1000 max score: 0.998269 smiles: COC(=O)C[C@@H](c1ccc(Cl)c(Cl)c1)n1cc(-c2ccc(N(C(=O)c3c(Cl)cnc(Br)c3Cl)C(C(=O)NCc3ccccc3)c3cc(Cl)c(O)c(Br)c3)cc2)nn1 bide-uc-2602_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-2060
+2024-09-19:12:02:43,302 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1100 max score: 0.999705 smiles: Cc1cc(Br)cc(Cn2cc(-c3ccccc3N(C(=O)c3c(Cl)cnc(Br)c3Cl)C(C(=O)NCc3ccccc3)c3cc(Cl)c(O)c(Br)c3)nn2)n1 bide-uc-2602_bide-uc-2871_bide-uc-1858_bide-uc-1807_bide-click-am-1788
+2024-09-19:12:31:06,377 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1200 max score: 0.999963 smiles: O=C(NCc1ccccc1)C(c1cc(Cl)c(O)c(Br)c1)N(C(=O)c1cc(Br)nc(Br)c1)c1ccc(-c2cn([C@H]3CCOc4c(Cl)cccc43)nn2)cc1 bide-uc-2101_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1914
+2024-09-19:12:57:59,436 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1300 max score: 0.999963 smiles: O=C(NCc1ccccc1)C(c1cc(Cl)c(O)c(Br)c1)N(C(=O)c1cc(Br)nc(Br)c1)c1ccc(-c2cn([C@H]3CCOc4c(Cl)cccc43)nn2)cc1 bide-uc-2101_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1914
+2024-09-19:13:27:52,449 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1400 max score: 0.999963 smiles: O=C(NCc1ccccc1)C(c1cc(Cl)c(O)c(Br)c1)N(C(=O)c1cc(Br)nc(Br)c1)c1ccc(-c2cn([C@H]3CCOc4c(Cl)cccc43)nn2)cc1 bide-uc-2101_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1914
+2024-09-19:13:55:28,827 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1500 max score: 0.999963 smiles: O=C(NCc1ccccc1)C(c1cc(Cl)c(O)c(Br)c1)N(C(=O)c1cc(Br)nc(Br)c1)c1ccc(-c2cn([C@H]3CCOc4c(Cl)cccc43)nn2)cc1 bide-uc-2101_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1914
+2024-09-19:14:23:35,686 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1600 max score: 0.999963 smiles: O=C(NCc1ccccc1)C(c1cc(Cl)c(O)c(Br)c1)N(C(=O)c1cc(Br)nc(Br)c1)c1ccc(-c2cn([C@H]3CCOc4c(Cl)cccc43)nn2)cc1 bide-uc-2101_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1914
+2024-09-19:14:51:36,523 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1700 max score: 0.999963 smiles: O=C(NCc1ccccc1)C(c1cc(Cl)c(O)c(Br)c1)N(C(=O)c1cc(Br)nc(Br)c1)c1ccc(-c2cn([C@H]3CCOc4c(Cl)cccc43)nn2)cc1 bide-uc-2101_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1914
+2024-09-19:15:21:41,594 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1800 max score: 0.999963 smiles: O=C(NCc1ccccc1)C(c1cc(Cl)c(O)c(Br)c1)N(C(=O)c1cc(Br)nc(Br)c1)c1ccc(-c2cn([C@H]3CCOc4c(Cl)cccc43)nn2)cc1 bide-uc-2101_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1914
+2024-09-19:15:52:22,964 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:225 Iteration: 1900 max score: 0.999963 smiles: O=C(NCc1ccccc1)C(c1cc(Cl)c(O)c(Br)c1)N(C(=O)c1cc(Br)nc(Br)c1)c1ccc(-c2cn([C@H]3CCOc4c(Cl)cccc43)nn2)cc1 bide-uc-2101_bide-uc-2871_bide-uc-1858_bide-uc-1662_bide-click-am-1914
+2024-09-19:16:20:28,506 INFO     /data2/zxhuang/ugi/TS/ts_main.py:72 22700 evaluations | 0.000% of total
+2024-09-19:16:20:28,511 INFO     /data2/zxhuang/ugi/TS/ts_main.py:77 Saved results to: ./TS_ugi_click_activity_sampling/results/ace_on_amine_results.csv

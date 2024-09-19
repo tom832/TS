@@ -1,0 +1,25 @@
+2024-09-05:22:55:03,373 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 1.08e+07 possible products
+2024-09-06:13:53:13,780 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:177 warmup score stats: cnt=11468, mean=0.0350, std=0.0869, min=0.0000, max=0.7813
+2024-09-06:13:53:13,836 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:195 Top score found during warmup: 0.781
+2024-09-06:13:53:20,123 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 0 max score: 0.768606 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2cc(F)c(F)cc2Br)cc1 bide-uc-1848_bide-uc-2029_bide-uc-1140_bide-uc-3
+2024-09-06:14:03:30,91 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 100 max score: 0.827592 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2cccc(Br)c2OC)cc1 bide-uc-1848_bide-uc-2607_bide-uc-1140_bide-uc-3
+2024-09-06:14:13:59,236 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 200 max score: 0.831852 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2ccc(Cl)cc2OC)cc1 bide-uc-1848_bide-uc-2285_bide-uc-1140_bide-uc-3
+2024-09-06:14:24:18,98 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 300 max score: 0.832996 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2cccc(Cl)c2OC)cc1 bide-uc-1848_bide-uc-1939_bide-uc-1140_bide-uc-3
+2024-09-06:14:34:24,789 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 400 max score: 0.835137 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2ccc(OC)cc2C)cc1 bide-uc-1848_bide-uc-955_bide-uc-1140_bide-uc-3
+2024-09-06:14:44:56,633 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 500 max score: 0.848806 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)ccc(OC)c2Br)cc1 bide-uc-1848_bide-uc-3315_bide-uc-1140_bide-uc-3
+2024-09-06:14:55:24,118 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 600 max score: 0.848806 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)ccc(OC)c2Br)cc1 bide-uc-1848_bide-uc-3315_bide-uc-1140_bide-uc-3
+2024-09-06:15:06:21,969 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 700 max score: 0.848806 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)ccc(OC)c2Br)cc1 bide-uc-1848_bide-uc-3315_bide-uc-1140_bide-uc-3
+2024-09-06:15:17:12,333 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 800 max score: 0.848806 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)ccc(OC)c2Br)cc1 bide-uc-1848_bide-uc-3315_bide-uc-1140_bide-uc-3
+2024-09-06:15:26:25,158 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 900 max score: 0.848806 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)ccc(OC)c2Br)cc1 bide-uc-1848_bide-uc-3315_bide-uc-1140_bide-uc-3
+2024-09-06:15:33:56,661 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1000 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:15:40:27,252 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1100 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:15:46:59,673 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1200 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:15:54:28,291 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1300 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:16:01:38,451 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1400 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:16:08:06,536 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1500 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:16:14:36,657 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1600 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:16:21:03,689 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1700 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:16:27:47,999 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1800 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:16:35:12,246 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:224 Iteration: 1900 max score: 0.849188 smiles: C#Cc1ccc(C(=O)NC(C(=O)NC(C)(C)C)c2c(F)cc(OC)cc2F)cc1 bide-uc-1848_bide-uc-1292_bide-uc-1140_bide-uc-3
+2024-09-06:16:41:57,639 INFO     /data2/zxhuang/ugi/TS/ts_main.py:72 13468 evaluations | 0.124% of total
+2024-09-06:16:41:57,662 INFO     /data2/zxhuang/ugi/TS/ts_main.py:77 Saved results to: ./TS_ugi_sampling/results/ace_on_acid_results.csv

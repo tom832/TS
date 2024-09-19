@@ -1,0 +1,2 @@
+2024-09-19:22:15:56,328 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 1.23e+07 possible products
+2024-09-19:22:20:30,108 INFO     /data2/zxhuang/ugi/TS/thompson_sampling.py:87 1.23e+07 possible products
