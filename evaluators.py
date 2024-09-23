@@ -16,6 +16,7 @@ import useful_rdkit_utils as uru
 #     warnings.warn(f"Openeye packages not available in this environment; do not attempt to use ROCSEvaluator or "
 #                   f"FredEvaluator")
 from rdkit import Chem, DataStructs
+from rdkit.Chem import AllChem
 import pandas as pd
 from sqlitedict import SqliteDict
 
@@ -32,6 +33,59 @@ from chemprop.args import PredictArgs, get_checkpoint_paths
 # args.no_features_scaling = False
 # args.preds_path = "./preds.csv"
 # mpnn_model = load_model(args=args)
+
+def modular_click_reverse_rxn(
+    triazole_smi: str = "CC1=CN=NN1C",
+    return_mol=False,
+    kekulize=True,
+    canonical=True,
+):
+    """
+    Generate reverse modular click (CuAAC + diazole transfer) product from modular click product SMILES string.
+
+    Parameters
+    ----------
+    triazole_smi : str, default='C1=CC=NN1'
+        SMILES string of modular click product triazole
+    return_mol : bool, default=False
+        If True, returns RDKit Mol object of reverse modular click product.
+        If False, returns SMILES string of reverse modular click product
+    kekulize : bool, default=True
+        If True, returns kekulized SMILES string
+    canonical : bool, default=True
+        If True, returns canonical SMILES string
+
+    Returns
+    -------
+    prod_mol : str or Chem.Mol
+        If return_mol is False, returns SMILES string of reverse modular click product.
+        If return_mol is True, returns RDKit Mol object of reverse modular click product.
+    """
+    triazole_mol = Chem.MolFromSmiles(triazole_smi)
+    modular_click_reverse_smarts = "[#6:1][n:2]1:[n:3]:[n:4]:[c:6]:[c:5]1>>[NH2:2][#6:1].[N:3]=[N:4].[C:5]#[C:6]"
+    modular_click_reverse_rxn = AllChem.ReactionFromSmarts(modular_click_reverse_smarts)
+    products = modular_click_reverse_rxn.RunReactants((triazole_mol,))
+    prod_amine_mol = products[0][0]
+    prod_alkyne_mol = products[0][2]
+    try:
+        Chem.SanitizeMol(prod_amine_mol)
+        Chem.SanitizeMol(prod_alkyne_mol)
+    except:
+        print(f"Error in sanitizing product for {triazole_smi}")
+        return prod_amine_mol, prod_alkyne_mol
+    try:
+        if return_mol:
+            return prod_amine_mol, prod_alkyne_mol
+        else:
+            return Chem.MolToSmiles(
+                prod_amine_mol, kekuleSmiles=kekulize, canonical=canonical
+            ), Chem.MolToSmiles(
+                prod_alkyne_mol, kekuleSmiles=kekulize, canonical=canonical
+            )
+    except:
+        print(f"Error in generating product for {triazole_smi}")
+        return None
+    
 
 class Evaluator(ABC):
     @abstractmethod
@@ -353,18 +407,20 @@ class UgiRxnMPNNEvaluator(Evaluator):
         #     "/home/jnliu/chemprop/benchmark_chemprop/hyper_opt/opt_for_pred/trial_seed_60/fold_3/model_0/model.pt",
         #     "/home/jnliu/chemprop/benchmark_chemprop/hyper_opt/opt_for_pred/trial_seed_60/fold_5/model_0/model.pt",
         # ]
-        self.args.checkpoint_paths = [
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_2/model_0/model.pt",
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_1/model_0/model.pt",
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_8/model_0/model.pt",
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_6/model_0/model.pt",
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_0/model_0/model.pt",
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_4/model_0/model.pt",
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_9/model_0/model.pt",
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_7/model_0/model.pt",
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_3/model_0/model.pt",
-            "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_5/model_0/model.pt",
-        ]
+        self.args.checkpoint_dir = "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test"
+        self.args.checkpoint_paths = get_checkpoint_paths(checkpoint_dir=self.args.checkpoint_dir)
+        # self.args.checkpoint_paths = [
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_2/model_0/model.pt",
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_1/model_0/model.pt",
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_8/model_0/model.pt",
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_6/model_0/model.pt",
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_0/model_0/model.pt",
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_4/model_0/model.pt",
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_9/model_0/model.pt",
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_7/model_0/model.pt",
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_3/model_0/model.pt",
+        #     "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test/fold_5/model_0/model.pt",
+        # ]
         self.args.no_features_scaling = False
         self.args.preds_path = "./preds.csv"
         self.mpnn_model = load_model(args=self.args)
@@ -408,14 +464,16 @@ class ActivityMPNNEvaluator(Evaluator):
     def __init__(self, input_dict):
         self.num_evaluations = 0
         self.args = PredictArgs()
-        self.args.features_generator =  ["scaffoldkeys", "cats2d", "ifp3_7en8"]
+        # self.args.features_generator =  ["scaffoldkeys", "cats2d", "ifp3_7en8"]
+        self.args.features_generator =  ["scaffoldkeys", "cats2d"]
         self.args.gpu = 0
-        self.args.checkpoint_dir = "/home/zxhuang/modular_click/machine_learning/chemprop_project_rescreen/opted_results/doc_1_2_3/scaffoldkeys_cats2d_ifp3_7en8_qmdesc/scaffold_balanced_noTest"
+        # self.args.checkpoint_dir = "/home/zxhuang/modular_click/machine_learning/chemprop_project_rescreen/opted_results/doc_1_2_3/scaffoldkeys_cats2d_ifp3_7en8_qmdesc/scaffold_balanced_noTest"
+        self.args.checkpoint_dir = "/home/zxhuang/modular_click/machine_learning/chemprop_project_rescreen/opted_results/doc_1_2_3_4/scaffoldkeys_cats2d_qmdesc/scaffold_balanced_noTest"
         self.args.checkpoint_paths = get_checkpoint_paths(checkpoint_dir=self.args.checkpoint_dir)
         self.args.no_features_scaling = False
         self.args.preds_path = "./preds.csv"
         self.args.cal_qmdesc = True
-        self.args.num_workers = 2
+        self.args.num_workers = 8
         self.mpnn_model = load_model(args=self.args)
 
     @property
@@ -445,6 +503,73 @@ class ActivityMPNNEvaluator(Evaluator):
         print(preds_result)
 
         return preds_result[0][0]
+
+
+class UnitedMPNNEvaluator(Evaluator):
+    """United MPNN Evaluator class for Ugi Reaction and Activity"""
+
+    def __init__(self, input_dict):
+        self.num_evaluations = 0
+        self.args_ugi = PredictArgs()
+        self.args_ugi.features_generator =  ["rdkit_2d","ifg_drugbank_2"]
+        self.args_ugi.number_of_molecules = 2
+        self.args_ugi.gpu = 0
+        self.args_ugi.checkpoint_dir = "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test"
+        self.args_ugi.checkpoint_paths = get_checkpoint_paths(checkpoint_dir=self.args_ugi.checkpoint_dir)
+        self.args_ugi.no_features_scaling = False
+        self.args_ugi.preds_path = "./preds.csv"
+        self.args_ugi.cal_qmdesc = True
+        self.args_ugi.num_workers = 8
+        self.mpnn_model_ugi = load_model(args=self.args_ugi)
+
+        self.args_activity = PredictArgs()
+        self.args_activity.features_generator =  ["scaffoldkeys", "cats2d"]
+        self.args_activity.gpu = 0
+        self.args_activity.checkpoint_dir = "/home/zxhuang/modular_click/machine_learning/chemprop_project_rescreen/opted_results/doc_1_2_3_4/scaffoldkeys_cats2d_qmdesc/scaffold_balanced_noTest"
+        self.args_activity.checkpoint_paths = get_checkpoint_paths(checkpoint_dir=self.args_activity.checkpoint_dir)
+        self.args_activity.no_features_scaling = False
+        self.args_activity.preds_path = "./preds.csv"
+        self.args_activity.cal_qmdesc = True
+        self.args_activity.num_workers = 8
+        self.mpnn_model_activity = load_model(args=self.args_activity)
+
+    @property
+    def counter(self):
+        return self.num_evaluations
+    
+    def evaluate(self, mol):
+        self.num_evaluations += 1
+        if isinstance(mol, str) == False:
+            smi = Chem.MolToSmiles(mol)
+        else:
+            smi = mol
+        print(smi)
+        if smi is None:
+            raise ValueError("Invaild Input Molecule")
+        
+        amine_smi, alkyne_smi = modular_click_reverse_rxn(triazole_smi=smi)
+
+        rxn_smi = ugi_rxn_mapper([alkyne_smi])[0]
+        rxn_smi = [[rxn_smi,"FC(F)(F)CO"]]
+        try:
+            preds_result_ugi = make_predictions(self.args_ugi, smiles=rxn_smi, model_objects=self.mpnn_model_ugi)
+        except:
+            self.mpnn_model_ugi = load_model(args=self.args_ugi)
+            preds_result_ugi = make_predictions(self.args_ugi, smiles=rxn_smi, model_objects=self.mpnn_model_ugi)
+        print('Ugi rxn feasibility:', preds_result_ugi)
+
+        try:
+            preds_result_activity = make_predictions(self.args_activity, smiles=[[smi]], model_objects=self.mpnn_model_activity)
+        except:
+            self.mpnn_model_activity = load_model(args=self.args_activity)
+            preds_result_activity = make_predictions(self.args_activity, smiles=[[smi]], model_objects=self.mpnn_model_activity)
+        print('Activity:', preds_result_activity)
+
+        # Geometric Mean
+        geometric_mean = np.sqrt(preds_result_ugi[0][0] * preds_result_activity[0][0])
+        print('Geometric Mean:', geometric_mean)
+        return geometric_mean
+
 
 if __name__ == "__main__":
     # test_rocs_eval()
