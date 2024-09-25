@@ -62,7 +62,7 @@ def modular_click_reverse_rxn(
         If return_mol is True, returns RDKit Mol object of reverse modular click product.
     """
     triazole_mol = Chem.MolFromSmiles(triazole_smi)
-    modular_click_reverse_smarts = "[#6:1][n:2]1:[n:3]:[n:4]:[c:6]:[c:5]1>>[NH2:2][#6:1].[N:3]=[N:4].[C:5]#[C:6]"
+    modular_click_reverse_smarts = "[#6:1][n:2]1:[n:3]:[n:4]:[c:6]([#6:7]):[c:5]1>>[NH2:2][#6:1].[N:3]=[N:4].[CH1:5]#[C:6][#6:7]"
     modular_click_reverse_rxn = AllChem.ReactionFromSmarts(modular_click_reverse_smarts)
     products = modular_click_reverse_rxn.RunReactants((triazole_mol,))
     prod_amine_mol = products[0][0]
@@ -514,7 +514,8 @@ class UnitedMPNNEvaluator(Evaluator):
         self.args_ugi.features_generator =  ["rdkit_2d","ifg_drugbank_2"]
         self.args_ugi.number_of_molecules = 2
         self.args_ugi.gpu = 0
-        self.args_ugi.checkpoint_dir = "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test"
+        # self.args_ugi.checkpoint_dir = "/home/jnliu/chemprop/benchmark_chemprop/yield_pred/all_data/rdkit_ifg2_qmatom_hyper_opted_no_test"
+        self.args_ugi.checkpoint_dir = "/home/jnliu/chemprop/benchmark_chemprop/hyper_opt/literature+in_house/all_data/preci_no_test_model"
         self.args_ugi.checkpoint_paths = get_checkpoint_paths(checkpoint_dir=self.args_ugi.checkpoint_dir)
         self.args_ugi.no_features_scaling = False
         self.args_ugi.preds_path = "./preds.csv"
